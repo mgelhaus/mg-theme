@@ -6,7 +6,6 @@
  *
  * @package MG\Theme
  */
-
 if ( is_single() ) :
 ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -58,7 +57,6 @@ remove_all_filters( THEME_TEXT_DOMAIN . '-markup-indent', 4 );
 if ( is_single() ) :
 ?>
 		</div>
-
 <?php 
 else :
 ?>

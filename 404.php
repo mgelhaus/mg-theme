@@ -6,9 +6,9 @@
  *
  * @package MG\Theme
  */
-use MG\Theme\Functions;
 
-get_header(); ?>
+get_header(); 
+?>
 
 		<section class="error-404 not-found">
 			<header class="page-header">

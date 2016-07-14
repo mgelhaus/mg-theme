@@ -14,7 +14,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', THEME_TEXT_DOMAIN ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', THEME_TEXT_DOMAIN ), 'WordPress' ); ?></a><span class="sep"> | </span><?php printf( esc_html__( 'Theme by %1$s.', THEME_TEXT_DOMAIN ), '<a href="https://mike.gelha.us" rel="designer">Michael Gelhaus</a>' ); echo "\n"; ?>
+			</span><?php printf( esc_html__( 'Theme by %1$s.', THEME_TEXT_DOMAIN ), '<a href="https://github.com/mgelhaus" rel="designer">Michael Gelhaus</a>' ); echo "\n"; ?>
 		</div>
 	</footer>
 

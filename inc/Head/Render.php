@@ -12,8 +12,6 @@ class Render
 {
 	/**
 	 * Custom Head Function
-	 * 
-	 * @uses wp_head()
 	 */
 	public static function head() {
 		$indent = str_repeat( "\t", \apply_filters( THEME_TEXT_DOMAIN . '-markup-indent', 0 ) );

@@ -7,9 +7,7 @@
  * @package MG\Theme
  */
 
-get_header(); ?>
-
-<?php 
+get_header(); 
 if ( have_posts() ) : 
 ?>
 		<header class="page-header">
@@ -40,6 +38,5 @@ if ( have_posts() ) :
 else :
 	get_template_part( 'template-parts/content', 'none' );
 endif; 
-
 get_sidebar();
 get_footer();

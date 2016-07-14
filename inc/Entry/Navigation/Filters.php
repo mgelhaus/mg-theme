@@ -14,7 +14,6 @@ class Filters
 {
 	public static function fixMarkup( $template, $class ) {
 		$indent = \str_repeat( "\t", \apply_filters( THEME_TEXT_DOMAIN . '-markup-indent', 0 ) );
-		$template = str_replace( '%3$s', PHP_EOL . "\t\t\t" . '%3$s' . PHP_EOL . "\t\t", $template );
 		// Convert to string to array of lines
 		$template_lines = \explode( PHP_EOL, $template );
 		$orig_indent = null;
@@ -34,7 +33,7 @@ class Filters
 		}
 		// Repack rows into string
 		$template = PHP_EOL . \implode( PHP_EOL, $template_lines );
-
+		$template = str_replace( '%3$s', '%3$s' . PHP_EOL . $indent . "\t", $template );
 		return $template;
 	}
 }

@@ -19,10 +19,9 @@ class Filters
 	 * @param int    $num  Page number for paginated posts' page links.
 	 * @return array
 	 */
-	public static function fixMarkup( $html, $num ) {
-		$html = trim($html);
-		$html = "\t" . $html . PHP_EOL;
-		if ( 0 === $num ) $html .= PHP_EOL . $html;
+	public static function fixMarkup( $html, $format, $link, $post, $adjacent ) {
+		$indent = str_repeat( "\t", ( \apply_filters( THEME_TEXT_DOMAIN . '-markup-indent', 0 ) +2 ) );
+		$html = PHP_EOL . $indent . trim($html);
 		return $html;
 	}
 }

@@ -29,7 +29,7 @@ MG\Theme includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 0.1.0 - July 12 2015 =
+= 0.1.0 - July 12 2017 =
 * Initial release
 
 == Credits ==

@@ -102,8 +102,10 @@ class Core
 			__NAMESPACE__ . '\\Menu\\Filters::restructureMarkup', 11, 2 );
 		\add_filter( 'navigation_markup_template',	
 			__NAMESPACE__ . '\\Entry\\Navigation\\Filters::fixMarkup', 10, 2 );
-		\add_filter( 'wp_link_pages_link',	
-			__NAMESPACE__ . '\\Entry\\Navigation\\Item\\Filters::fixMarkup', 10, 2 );
+		\add_filter( 'previous_post_link',	
+			__NAMESPACE__ . '\\Entry\\Navigation\\Item\\Filters::fixMarkup', 10, 5 );
+		\add_filter( 'next_post_link',	
+			__NAMESPACE__ . '\\Entry\\Navigation\\Item\\Filters::fixMarkup', 10, 5 );
 		\add_filter( 'get_search_form', 
 			__NAMESPACE__ . '\\Searchform\\Filters::restructureMarkup' );
 	}
