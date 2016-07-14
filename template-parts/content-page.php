@@ -13,12 +13,13 @@
 			</header>
 			<div class="entry-content">
 <?php
-	the_content();
-
-	wp_link_pages( array(
-		'before' => '<div class="page-links">' . esc_html__( 'Pages:', THEME_TEXT_DOMAIN ),
-		'after'  => '</div>',
-	) );
+add_filter( THEME_TEXT_DOMAIN . '-markup-indent', function() { return 4; }, 4 );
+the_content();
+wp_link_pages( array(
+	'before' => '<div class="page-links">' . esc_html__( 'Pages:', THEME_TEXT_DOMAIN ),
+	'after'  => '</div>',
+) );
+remove_all_filters( THEME_TEXT_DOMAIN . '-markup-indent', 4 );
 ?>
 			</div>
 <?php 
@@ -41,3 +42,4 @@
 	endif;
 ?>
 		</div>
+<?php 

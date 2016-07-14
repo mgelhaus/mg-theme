@@ -1,26 +1,26 @@
 <?php
 /**
- * Custom filters for the Entry Navigation HTML Elements.
+ * Custom filters for the Entry Content HTML Elements.
  * 
  * @package MG\Theme
  * @subpackage Entry
- * @subpackage Navigation
+ * @subpackage Content
  *
  * @link https://developer.wordpress.org/reference/functions/body_class/
  */
-namespace MG\Theme\Entry\Navigation;
+namespace MG\Theme\Entry\Content;
 
 class Filters
 {
-	public static function fixMarkup( $template, $class ) {
+	public static function fixMarkup( $html ) {
 		$indent = \str_repeat( "\t", \apply_filters( THEME_TEXT_DOMAIN . '-markup-indent', 0 ) );
 		// Convert to string to array of lines
-		$template_lines = \explode( PHP_EOL, $template );
+		$html_lines = \explode( PHP_EOL, $html );
 		$orig_indent = null;
-		foreach ($template_lines as $row => $line ) {
+		foreach ($html_lines as $row => $line ) {
 			// Remove Empty Rows
 			if ( '' === trim($line) ) {
-				unset( $template_lines[$row] );
+				unset( $html_lines[$row] );
 				continue;
 			}
 			// Build Original Indent
@@ -29,11 +29,10 @@ class Filters
 				$orig_indent = \str_repeat( "\t", \strspn( \rtrim($line), "\t" ) );				
 			}
 			// Swap Indention
-			$template_lines[$row] = \preg_replace( '/'.\preg_quote($orig_indent, '/').'/', $indent, $line, 1 );
+			$html_lines[$row] = \preg_replace( '/'.\preg_quote($orig_indent, '/').'/', $indent, $line, 1 );
 		}
 		// Repack rows into string
-		$template = PHP_EOL . \implode( PHP_EOL, $template_lines );
-		$template = str_replace( '%3$s', '%3$s' . PHP_EOL . $indent . "\t", $template ) . PHP_EOL;
-		return $template;
+		$html = \implode( PHP_EOL, $html_lines ) . PHP_EOL;
+		return $html;
 	}
 }

@@ -3,12 +3,12 @@
  * Custom filters for SearchForm HTML Objects.
  *
  * @package MG\Theme
- * @subpackage Markup
- * @subpackage Searchform
+ * @subpackage Search
+ * @subpackage Form
  *
  * @link https://developer.wordpress.org/reference/functions/get_search_form/
  */
-namespace MG\Theme\Markup\Searchform;
+namespace MG\Theme\Search\Form;
 
 /**
  * Core class used to implement Searchform Filter functions.

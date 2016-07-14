@@ -3,7 +3,6 @@
  * Custom filters for the Entry Navigation HTML Elements.
  * 
  * @package MG\Theme
- * @subpackage Markup
  * @subpackage Navigation
  * @subpackage Item
  */

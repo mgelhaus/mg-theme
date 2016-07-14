@@ -26,6 +26,5 @@ get_header();
 ?>
 			</aside>
 		</section>
-
 <?php
 get_footer();

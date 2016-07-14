@@ -32,6 +32,7 @@ if ( have_posts() ) :
 	the_posts_navigation();
 	remove_all_filters( THEME_TEXT_DOMAIN . '-markup-indent', 2 );
 else :
+	echo PHP_EOL;
 	get_template_part( 'template-parts/content', 'none' );
 endif;
 get_sidebar();

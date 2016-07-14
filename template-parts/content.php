@@ -19,20 +19,11 @@ else :
 <?php 
 	the_title( str_repeat( "\t", 4 ) . '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' . PHP_EOL );
 endif;
-
-if ( 'post' === get_post_type() ) : 
-	$is_modified = \get_the_time( 'U' ) !== \get_the_modified_time( 'U' )
-?>
-				<div class="entry-meta">
-					<span class="posted-on"><?php esc_html_e('Posted on', THEME_TEXT_DOMAIN); echo ' '; ?><time class="entry-date published<?php if ( !$is_modified ) echo ' updated'; ?>" datetime="<?php esc_attr_e( get_the_time( 'c' ) ); ?>"><?php esc_html_e( get_the_time('F j, Y') ); ?></time><?php if ( $is_modified ) : ?><time class="updated" datetime="<?php esc_attr_e( get_the_modified_time( 'c' ) ); ?>"><?php esc_html_e( get_the_modified_time('F j, Y') ); ?></time><?php endif;  echo PHP_EOL; ?>
-					<span class="byline"><?php esc_html_e('by'); echo ' '; ?><a class="url fn n" href="<?php esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php esc_attr_e( 'Author :', THEME_TEXT_DOMAIN ); esc_attr_e( get_the_author() ); ?>"><span class="author vcard"><?php esc_html_e( get_the_author() ); ?></span></a></span>
-				</div>
-<?php 
-endif; 
+if ( 'post' === get_post_type() )
+	get_template_part( 'template-parts/entry', 'meta' );
 ?>
 			</header>
 			<div class="entry-content">
-
 <?php
 add_filter( THEME_TEXT_DOMAIN . '-markup-indent', function() { return 4; }, 4 );
 the_content( sprintf(
@@ -45,8 +36,8 @@ wp_link_pages( array(
 	'after'  => '</div>',
 ) );
 remove_all_filters( THEME_TEXT_DOMAIN . '-markup-indent', 4 );
+echo PHP_EOL;
 ?>
-
 			</div>
 			<footer class="entry-footer">
 <?php 

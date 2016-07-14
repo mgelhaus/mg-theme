@@ -3,13 +3,12 @@
  * Custom filters for Category HTML Elements.
  *
  * @package MG\Theme
- * @subpackage Markup
  * @subpackage Category
  *
  * @link https://developer.wordpress.org/reference/functions/wp_nav_menu/
  */
-namespace MG\Theme\Markup\Category;
-use MG\Theme\Markup\Category\Walker;
+namespace MG\Theme\Category;
+use MG\Theme\Category\Walker;
 
 /**
  * Core class used to implement Category Filter functions.

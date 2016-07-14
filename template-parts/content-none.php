@@ -10,10 +10,10 @@
 		<section class="no-results not-found">
 			<header class="page-header">
 				<h1 class="page-title"><?php esc_html_e( 'Nothing Found', THEME_TEXT_DOMAIN ); ?></h1>
-			</header><!-- .page-header -->
-
+			</header>
 			<div class="page-content">
 <?php
+	add_filter( THEME_TEXT_DOMAIN . '-markup-indent', function() { return 4; }, 4 );
 	if ( is_home() && current_user_can( 'publish_posts' ) ) : 
 ?>
 				<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', THEME_TEXT_DOMAIN ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
@@ -30,6 +30,8 @@
 <?php
 		get_search_form();
 	endif; 
+	remove_all_filters( THEME_TEXT_DOMAIN . '-markup-indent', 4 );
 ?>
 			</div>
 		</section>
+<?php 
